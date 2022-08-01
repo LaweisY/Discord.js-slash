@@ -1,4 +1,7 @@
 //İLK PARÇA
+const db = require("quick.db");
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
 client.on('ready', async () => {
 
@@ -68,7 +71,6 @@ client.on('ready', async () => {
 client.ws.on('INTERACTION_CREATE', async interaction => {
       const command = interaction.data.name.toLowerCase();
       const args = interaction.data.options;
-      const db = require("quick.db");
       if (command == "otorol") {
         if (args[0].name == "ayarla") {
           let role = args[0].options[1].value
